@@ -1,4 +1,5 @@
 import { Post } from '@prisma/client';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -13,7 +14,9 @@ const TrendingCard = ({ className, post }: TrendingCardProps) => {
       href={`${process.env.NEXT_PUBLIC_URL}/post/${post?.id}`}
       className={`${className} sm:mt-0 sm:h-auto relative block mt-7 w-full h-96 hover:opacity-70`}
     >
-      <div className="relative z-0 w-full h-full bg-wh-500">{post?.image}</div>
+      <div className="relative z-0 w-full h-full bg-wh-500">
+        <Image fill style={{ objectFit: 'cover' }} alt="trending" src={post?.image} />
+      </div>
       <div className="absolute top-0 left-0 w-full h-full z-1 bg-gradient-gradual" />
       <div className="absolute bottom-0 left-0 p-3 z-2">
         <h4 className="inline-block px-5 py-1 font-semibold bg-accent-orange text-wh-900">{post?.category}</h4>
