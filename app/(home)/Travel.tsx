@@ -1,10 +1,13 @@
 import React from 'react';
 
 import Card from 'app/(shared)/Card';
+import { Post } from '@prisma/client';
 
-type Props = {};
+type TravelProps = {
+  travelPosts: Array<Post>;
+};
 
-const Travel = (props: Props) => {
+const Travel = ({ travelPosts }: TravelProps) => {
   return (
     <div className="mt-10">
       <hr className="border-1" />
@@ -16,11 +19,30 @@ const Travel = (props: Props) => {
       {/* CARDS ROW */}
 
       <div className="justify-between gap-8 sm:flex">
-        <Card imageHeight="h-80" isSmallCard={false} isLongForm={false} className="mt-5 basis-1/3 sm:mt-0 bg-wh-500" />
-        <Card imageHeight="h-80" isSmallCard={false} isLongForm={false} className="mt-5 basis-1/3 sm:mt-0 bg-wh-500" />
-        <Card imageHeight="h-80" isSmallCard={false} isLongForm={false} className="mt-5 basis-1/3 sm:mt-0 bg-wh-500" />
+        <Card
+          post={travelPosts[0]}
+          imageHeight="h-80"
+          isSmallCard={false}
+          isLongForm={false}
+          className="mt-5 basis-1/3 sm:mt-0 bg-wh-500"
+        />
+        <Card
+          post={travelPosts[1]}
+          imageHeight="h-80"
+          isSmallCard={false}
+          isLongForm={false}
+          className="mt-5 basis-1/3 sm:mt-0 bg-wh-500"
+        />
+        <Card
+          post={travelPosts[2]}
+          imageHeight="h-80"
+          isSmallCard={false}
+          isLongForm={false}
+          className="mt-5 basis-1/3 sm:mt-0 bg-wh-500"
+        />
       </div>
       <Card
+        post={travelPosts[3]}
         imageHeight="h-80"
         isSmallCard={false}
         isLongForm={false}
