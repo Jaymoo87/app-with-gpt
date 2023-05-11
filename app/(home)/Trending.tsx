@@ -39,13 +39,14 @@ type TrendingProps = {
 
 const Trending = ({ trendingPosts }: TrendingProps) => {
   return (
-    <section className="pt-3 pb-10">
+    <section className="pt-4 pb-10">
       <div className="flex items-center gap-3">
-        <div className="px-8 py-2 text-sm font-bold bg-wh-900 text-wh-10">TRENDING</div>
-        <p className="text-sm">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aliquam molestias suscipit nostrum officiis
-          tempora hic, culpa qui voluptas, voluptatem vitae reiciendis? Deserunt commodi explicabo distinctio quia
-          aliquam, quae dolor.
+        <div className="px-8 py-4 text-sm font-bold bg-wh-900 text-wh-10">TRENDING</div>
+        <p className="pb-4 text-sm">
+          Welcome to our tech and travel blog, where we explore the latest technology trends and how they impact our
+          journeys around the world. From virtual reality tours to sustainable travel options, we will keep you updated
+          on the hottest topics and share our own experiences and insights. Join us on this exciting adventure and
+          discover the intersection of tech and travel!
         </p>
       </div>
 
