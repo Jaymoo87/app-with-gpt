@@ -15,7 +15,14 @@ const TrendingCard = ({ className, post }: TrendingCardProps) => {
       className={`${className} sm:mt-0 sm:h-auto relative block mt-7 w-full h-96 hover:opacity-70`}
     >
       <div className="relative z-0 w-full h-full bg-wh-500">
-        <Image fill style={{ objectFit: 'cover' }} alt="trending" src={post?.image} />
+        <Image
+          fill
+          style={{ objectFit: 'cover' }}
+          alt="trending"
+          src={post?.image}
+          placeholder="blur"
+          sizes="(max-width: 480px) 100vw, (max-width: 768px) 75vw, (max-width: 1060px) 50vw, 33vw "
+        />
       </div>
       <div className="absolute top-0 left-0 w-full h-full z-1 bg-gradient-gradual" />
       <div className="absolute bottom-0 left-0 p-3 z-2">
