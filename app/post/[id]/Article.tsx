@@ -14,7 +14,25 @@ type Props = {
 
 const Article = ({ contentError, editor, isEditable, setContent, title }: Props) => {
   const [role, setRole] = useState<string>('I am a helpful assistant.');
+
   if (!editor) return null;
+
+  const postAiContent = async () => {
+    editor.chain().focus().setContent('Generating AI Content. Wait a Moment...').run();
+
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/openai`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        title: title,
+        role: role,
+      }),
+    });
+    const data = await response.json();
+
+    editor.chain().focus().setContent(data.content).run();
+    setContent(data.content);
+  };
   return (
     <article className="leading-8 text-wh-500">
       {/* AI GENERATOR */}
@@ -29,7 +47,7 @@ const Article = ({ contentError, editor, isEditable, setContent, title }: Props)
               value={role}
               className="w-full px-3 py-1 border-2 rounded-md bg-wh-50"
             />
-            <button type="button" onClick={() => {}}>
+            <button type="button" onClick={postAiContent}>
               <RocketLaunchIcon className="w-8 h-8 text-accent-orange hover:text-wh-300" />
             </button>
           </div>

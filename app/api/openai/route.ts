@@ -8,7 +8,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-export async function PATCH(request: Request) {
+export async function POST(request: Request) {
   try {
     const { title, role } = await request.json();
     const aiRes: AxiosResponse<CreateChatCompletionResponse, any> = await openai.createChatCompletion({
@@ -16,15 +16,14 @@ export async function PATCH(request: Request) {
       messages: [
         {
           role: 'user',
-          content: `Create small blog post with html tags based on this title: ${title}`,
+          //   content: `Create small blog post with html tags based on this title: ${title}`,
+          content: `Create a 3 line blog post with html tags based on this title: ${title}`,
         },
         {
           role: 'system',
           content: `${role || 'I am a helpful assistant'}. Write with html tags`,
         },
       ],
-      temperature: 0,
-      max_tokens: 7,
     });
     return NextResponse.json(
       {
