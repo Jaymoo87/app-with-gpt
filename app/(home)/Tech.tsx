@@ -4,9 +4,10 @@ import { Post } from '@prisma/client';
 
 type TechProps = {
   techPosts: Array<Post>;
+  post: Post;
 };
 
-const Tech = ({ techPosts }: TechProps) => {
+const Tech = ({ techPosts, post }: TechProps) => {
   return (
     <section>
       <hr className="border-1" />

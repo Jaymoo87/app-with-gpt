@@ -9,7 +9,7 @@ type TravelProps = {
 
 const Travel = ({ travelPosts }: TravelProps) => {
   return (
-    <div className="mt-10">
+    <section className="mt-10">
       <hr className="border-1" />
       <div className="flex items-center gap-3 my-4">
         <h4 className="px-5 py-2 text-sm font-semibold bg-accent-green text-wh-900">TRAVEL</h4>
@@ -22,23 +22,23 @@ const Travel = ({ travelPosts }: TravelProps) => {
         <Card
           post={travelPosts[0]}
           imageHeight="h-80"
-          isSmallCard={false}
+          isSmallCard={true}
           isLongForm={false}
-          className="mt-5 basis-1/3 sm:mt-0 bg-wh-500"
+          className="mt-5 basis-1/3 sm:mt-0 "
         />
         <Card
           post={travelPosts[1]}
           imageHeight="h-80"
-          isSmallCard={false}
+          isSmallCard={true}
           isLongForm={false}
-          className="mt-5 basis-1/3 sm:mt-0 bg-wh-500"
+          className="mt-5 basis-1/3 sm:mt-0 "
         />
         <Card
           post={travelPosts[2]}
           imageHeight="h-80"
-          isSmallCard={false}
+          isSmallCard={true}
           isLongForm={false}
-          className="mt-5 basis-1/3 sm:mt-0 bg-wh-500"
+          className="mt-5 basis-1/3 sm:mt-0 "
         />
       </div>
       <Card
@@ -46,9 +46,9 @@ const Travel = ({ travelPosts }: TravelProps) => {
         imageHeight="h-80"
         isSmallCard={false}
         isLongForm={false}
-        className="items-center justify-between gap-3 mb-5 sm:flex mt-7 bg-wh-500"
+        className="items-center justify-between gap-3 mb-5 sm:flex mt-7 "
       />
-    </div>
+    </section>
   );
 };
 
