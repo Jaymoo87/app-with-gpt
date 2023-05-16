@@ -20,8 +20,8 @@ const Card = ({ className, imageHeight, isSmallCard = false, isLongForm = false,
 
   return (
     <div className={className}>
-      <Link href={`${process.env.NEXT_PUBLIC_URL}/post/${post?.id}`} className="basis-full hover:opacity-70">
-        <div className="relative z-0 w-full h-full bg-wh-500">
+      <div className="relative z-0 w-full h-full bg-wh-500">
+        <Link href={`${process.env.NEXT_PUBLIC_URL}/post/${post?.id}`} className="basis-full hover:opacity-70">
           <Image
             fill
             style={{ objectFit: 'cover' }}
@@ -30,8 +30,8 @@ const Card = ({ className, imageHeight, isSmallCard = false, isLongForm = false,
             placeholder="blur"
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 75vw, (max-width: 1060px) 50vw, 33vw "
           />
-        </div>
-      </Link>
+        </Link>
+      </div>
       <div className="basis-full">
         <Link href={`${process.env.NEXT_PUBLIC_URL}/post/${post?.id}`}>
           <h4
