@@ -19,3 +19,27 @@ model Post {
   image     String
   snippet   String   @db.Text
 }
+
+model Character {
+  id          String   @id @default(cuid())
+  name        String
+  class       String
+  race        String
+  weapon      String
+  creator     String
+  image       String
+  originStory String   @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+//  id: string;
+//   name: string;
+//   class: string;
+//   race: string;
+//   weapon: string;
+//   image: string;
+//   creator: string;
+//   originStory: string;
+//   createdAt: string;
+//   updatedAt: string;

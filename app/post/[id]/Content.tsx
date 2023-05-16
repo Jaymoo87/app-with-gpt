@@ -93,7 +93,7 @@ const Content = ({ post }: ContentProps) => {
   return (
     <div className="w-full max-w-full mb-10 prose">
       {/* BREADCRUMBS */}
-      <h5 className="text-wh-300">{`Home ${post?.category} > ${post?.title}`}</h5>
+      <h5 className="text-wh-300">{`Home > ${post?.category} > ${post?.title}`}</h5>
 
       {/* CATEGORY AND EDIT */}
       <CategoryandEdit

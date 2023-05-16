@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import SocialLinks from './SocialLinks';
 
-import Banner from '../../public/assets/banner2.png';
+import Banner from '../../public/assets/dndbanner2.jpg';
 
 type Props = {};
 
@@ -27,8 +27,8 @@ const Navbar = (props: Props) => {
       </nav>
       <div className="flex justify-between gap-8 mx-10 mt-5 mb-4">
         <div className="basis-2/3 md:mt-3">
-          <h1 className="text-3xl font-bold md:text-5xl">Blog of the Future</h1>
-          <p className="mt-3 text-sm">Blog dedicated to AI and generation a job automation</p>
+          <h1 className="text-3xl font-bold md:text-5xl">What Is Your Origin Story?</h1>
+          <p className="mt-3 text-sm">Ai generated character origin stories</p>
         </div>
         <div className="relative w-auto h-48 overflow-hidden rounded-l-full rounded-tr-full basis-full bg-wh-500">
           {' '}
